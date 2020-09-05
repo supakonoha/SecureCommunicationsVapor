@@ -72,7 +72,7 @@ extension Data {
             return nil
         }
 
-        guard let ChaChaPolySealedBox = try? ChaChaPoly.SealedBox(combined: self) else {
+        guard let chaChaPolySealedBox = try? ChaChaPoly.SealedBox(combined: self) else {
             return nil
         }
 
