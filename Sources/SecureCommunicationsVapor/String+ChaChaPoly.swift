@@ -35,9 +35,9 @@ extension String {
          - recipientPublicKey: Recipient public key.
          - salt: The salt to use for key derivation.
 
-     - Returns: combined ChaChaPoly Selead box  (nonce || ciphertext || tag) coded on base64. If there's a problem encrypting, nil is retuned.
+     - Returns: Combined ChaChaPoly Selead box  (nonce || ciphertext || tag) coded on base64. If there's a problem encrypting, `nil` is retuned.
      */
-    func sealChaChaPoly(senderPrivateKey: P256.KeyAgreement.PrivateKey, recipientPublicKey: P256.KeyAgreement.PublicKey, salt: String) -> String? {
+    public func sealChaChaPoly(senderPrivateKey: P256.KeyAgreement.PrivateKey, recipientPublicKey: P256.KeyAgreement.PublicKey, salt: String) -> String? {
         guard let data = self.data(using: .utf8) else {
             return nil
         }
@@ -60,9 +60,9 @@ extension String {
          - senderPublicKey: Sender public key.
          - salt: The salt to use for key derivation.
 
-     - Returns: Decrypts the message and verifies its authenticity using ChaChaPoly. If there's a problem decrypting, nil is retuned.
+     - Returns: Decrypts the message and verifies its authenticity using ChaChaPoly. If there's a problem decrypting, `nil` is retuned.
      */
-    func openChaChaPoly(recipientPrivateKey: P256.KeyAgreement.PrivateKey, senderPublicKey: P256.KeyAgreement.PublicKey, salt: String) -> String? {
+    public func openChaChaPoly(recipientPrivateKey: P256.KeyAgreement.PrivateKey, senderPublicKey: P256.KeyAgreement.PublicKey, salt: String) -> String? {
         guard let data = Data(base64Encoded: self) else {
             return nil
         }

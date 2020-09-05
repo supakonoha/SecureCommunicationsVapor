@@ -97,7 +97,7 @@ If you have a private key on an ANSI x9.63, RAW, PEM or DER representation you c
 
 ### From an ANSI x9.63 representation
 
-You can use the static `privateKey` function on `Keystore` struct.
+You can use the static `privateKey(x963Representation: Data)` function on `Keystore` struct.
 
 ```swift
 let privateKey = try KeyStore.privateKey(x963Representation: x963RepresentationPrivateKey)
@@ -105,7 +105,7 @@ let privateKey = try KeyStore.privateKey(x963Representation: x963RepresentationP
 
 ### From a RAW representation
 
-You can use the static `privateKey` function on `Keystore` struct.
+You can use the static `privateKey(rawRepresentation: Data)` function on `Keystore` struct.
 
 ```swift
 let privateKey = try KeyStore.privateKey(rawRepresentation: rawRepresentationPrivateKey)
@@ -113,7 +113,7 @@ let privateKey = try KeyStore.privateKey(rawRepresentation: rawRepresentationPri
 
 ### From a PEM representation
 
-You can use the static `privateKey` function on `Keystore` struct.
+You can use the static `privateKey(pemRepresentation: String)` function on `Keystore` struct.
 
 ```swift
 let privateKey = try KeyStore.privateKey(pemRepresentation: pemRepresentationPrivateKey)
@@ -121,7 +121,7 @@ let privateKey = try KeyStore.privateKey(pemRepresentation: pemRepresentationPri
 
 ### From an DER representation
 
-You can use the static `privateKey` function on `Keystore` struct.
+You can use the static `privateKey(derRepresentation: Data)` function on `Keystore` struct.
 
 ```swift
 let privateKey = try KeyStore.privateKey(derRepresentation: derRepresentationPrivateKey)
@@ -133,7 +133,7 @@ If you have a public key on an ANSI x9.63, RAW, PEM or DER representation you ca
 
 ### From an ANSI x9.63 representation
 
-You can use the static `publicKey` function on `Keystore` struct.
+You can use the static `publicKey(x963Representation: Data)` function on `Keystore` struct.
 
 ```swift
 let publicKey = try KeyStore.publicKey(x963Representation: x963RepresentationPublicKey)
@@ -141,7 +141,7 @@ let publicKey = try KeyStore.publicKey(x963Representation: x963RepresentationPub
 
 ### From a RAW representation
 
-You can use the static `publicKey` function on `Keystore` struct.
+You can use the static `publicKey(rawRepresentation: Data)` function on `Keystore` struct.
 
 ```swift
 let publicKey = try KeyStore.publicKey(rawRepresentation: rawRepresentationPublicKey)
@@ -149,7 +149,7 @@ let publicKey = try KeyStore.publicKey(rawRepresentation: rawRepresentationPubli
 
 ### From a PEM representation
 
-You can use the static `publicKey` function on `Keystore` struct.
+You can use the static `publicKey(pemRepresentation: String)` function on `Keystore` struct.
 
 ```swift
 let publicKey = try KeyStore.publicKey(pemRepresentation: pemRepresentationPublicKey)
@@ -157,7 +157,7 @@ let publicKey = try KeyStore.publicKey(pemRepresentation: pemRepresentationPubli
 
 ### From an DER representation
 
-You can use the static `publicKey` function on `Keystore` struct.
+You can use the static `publicKey(derRepresentation: Data)` function on `Keystore` struct.
 
 ```swift
 let publicKey = try KeyStore.publicKey(derRepresentation: derRepresentationPublicKey)
@@ -365,6 +365,10 @@ let isValid = message.isValidAuthenticationCodeHMAC(
     senderPublicKey: senderPublicKey,
     salt: salt)
 ```
+
+# API Reference
+
+You can check API Reference on [documentation site](https://supakonoha.github.io/SecureCommunicationsVapor/)
 
 [badge-languages]: https://img.shields.io/badge/languages-Swift-orange.svg
 [badge-pms]: https://img.shields.io/badge/supports-SwiftPM-green.svg

@@ -35,9 +35,9 @@ extension Data {
          - recipientPublicKey: Recipient public key.
          - salt: The salt to use for key derivation.
 
-     - Returns: combined ChaChaPoly Selead box  (nonce || ciphertext || tag). If there's a problem encrypting, nil is retuned.
+     - Returns: Combined ChaChaPoly Selead box  (nonce || ciphertext || tag). If there's a problem encrypting, `nil` is retuned.
      */
-    func sealChaChaPoly(senderPrivateKey: P256.KeyAgreement.PrivateKey, recipientPublicKey: P256.KeyAgreement.PublicKey, salt: Data) -> Data? {
+    public func sealChaChaPoly(senderPrivateKey: P256.KeyAgreement.PrivateKey, recipientPublicKey: P256.KeyAgreement.PublicKey, salt: Data) -> Data? {
         guard let keyStore = try? KeyStore(privateKey: senderPrivateKey) else {
             return nil
         }
@@ -59,9 +59,9 @@ extension Data {
          - senderPublicKey: Sender public key.
          - salt: The salt to use for key derivation.
 
-     - Returns: Decrypts the message and verifies its authenticity using ChaChaPoly. If there's a problem decrypting, nil is retuned.
+     - Returns: Decrypts the message and verifies its authenticity using ChaChaPoly. If there's a problem decrypting, `nil` is retuned.
      */
-    func openChaChaPoly(recipientPrivateKey: P256.KeyAgreement.PrivateKey, senderPublicKey: P256.KeyAgreement.PublicKey, salt: Data) -> Data? {
+    public func openChaChaPoly(recipientPrivateKey: P256.KeyAgreement.PrivateKey, senderPublicKey: P256.KeyAgreement.PublicKey, salt: Data) -> Data? {
         guard let keyStore = try? KeyStore(privateKey: recipientPrivateKey) else {
             return nil
         }

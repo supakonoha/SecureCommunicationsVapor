@@ -35,9 +35,9 @@ extension Data {
          - recipientPublicKey: Recipient public key.
          - salt: The salt to use for key derivation.
 
-     - Returns: Message authentication code. If there's a problem computing, nil is retuned.
+     - Returns: Message authentication code. If there's a problem computing, `nil` is retuned.
      */
-    func authenticationCodeHMAC(senderPrivateKey: P256.KeyAgreement.PrivateKey, recipientPublicKey: P256.KeyAgreement.PublicKey, salt: Data) -> Data? {
+    public func authenticationCodeHMAC(senderPrivateKey: P256.KeyAgreement.PrivateKey, recipientPublicKey: P256.KeyAgreement.PublicKey, salt: Data) -> Data? {
         guard let keyStore = try? KeyStore(privateKey: senderPrivateKey) else {
             return nil
         }
@@ -60,9 +60,9 @@ extension Data {
          - senderPublicKey: Sender public key.
          - salt: The salt to use for key derivation.
 
-     - Returns:  Boolean indicating whether the given code is valid for current data. If there's a problem validating, false is retuned.
+     - Returns:  Boolean indicating whether the given code is valid for current data. If there's a problem validating, `false` is retuned.
      */
-    func isValidAuthenticationCodeHMAC(recipientPrivateKey: P256.KeyAgreement.PrivateKey, authenticationCode: Data, senderPublicKey: P256.KeyAgreement.PublicKey, salt: Data) -> Bool {
+    public func isValidAuthenticationCodeHMAC(recipientPrivateKey: P256.KeyAgreement.PrivateKey, authenticationCode: Data, senderPublicKey: P256.KeyAgreement.PublicKey, salt: Data) -> Bool {
         guard let keyStore = try? KeyStore(privateKey: recipientPrivateKey) else {
             return false
         }

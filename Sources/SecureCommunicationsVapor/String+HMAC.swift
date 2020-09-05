@@ -35,9 +35,9 @@ extension String {
          - recipientPublicKey: Recipient public key.
          - salt: The salt to use for key derivation.
 
-     - Returns: Message authentication code coded on Base64.. If there's a problem computing, nil is retuned.
+     - Returns: Message authentication code coded on Base64. If there's a problem computing, `nil` is retuned.
      */
-    func authenticationCodeHMAC(senderPrivateKey: P256.KeyAgreement.PrivateKey , recipientPublicKey: P256.KeyAgreement.PublicKey, salt: String) -> String? {
+    public func authenticationCodeHMAC(senderPrivateKey: P256.KeyAgreement.PrivateKey , recipientPublicKey: P256.KeyAgreement.PublicKey, salt: String) -> String? {
         guard let data = self.data(using: .utf8) else {
             return nil
         }
@@ -61,9 +61,9 @@ extension String {
          - senderPublicKey: Sender public key.
          - salt: The salt to use for key derivation.
 
-     - Returns:  Boolean indicating whether the given code is valid for current data. If there's a problem validating, false is retuned.
+     - Returns:  Boolean indicating whether the given code is valid for current data. If there's a problem validating, `false` is retuned.
      */
-    func isValidAuthenticationCodeHMAC(recipientPrivateKey: P256.KeyAgreement.PrivateKey, authenticationCode: String, senderPublicKey: P256.KeyAgreement.PublicKey, salt: String) -> Bool {
+    public func isValidAuthenticationCodeHMAC(recipientPrivateKey: P256.KeyAgreement.PrivateKey, authenticationCode: String, senderPublicKey: P256.KeyAgreement.PublicKey, salt: String) -> Bool {
         guard let data = self.data(using: .utf8) else {
             return false
         }

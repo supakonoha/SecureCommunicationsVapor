@@ -33,113 +33,113 @@ public struct KeyStore {
     private var privateKey: P256.KeyAgreement.PrivateKey
 
     /**
-     Returns a P256.KeyAgreement.PrivateKey instance of an ANSI x9.63 representation of the private key.
+     Returns a `P256.KeyAgreement.PrivateKey` instance of an ANSI x9.63 representation of the private key.
 
      - Parameter x963Representation: ANSI x9.63 representation of the private key.
 
      - Throws: An error during the private key process
 
-     - Returns: P256.KeyAgreement.PrivateKey instance of the private key.
+     - Returns: `P256.KeyAgreement.PrivateKey` instance of the private key.
      */
-    static func privateKey(x963Representation: Data) throws -> P256.KeyAgreement.PrivateKey {
+    public static func privateKey(x963Representation: Data) throws -> P256.KeyAgreement.PrivateKey {
         return try P256.KeyAgreement.PrivateKey(x963Representation: x963Representation)
     }
 
     /**
-     Returns a P256.KeyAgreement.PrivateKey instance of raw representation of the private key.
+     Returns a `P256.KeyAgreement.PrivateKey` instance of raw representation of the private key.
 
      - Parameter rawRepresentation: raw representation of the private key.
 
      - Throws: An error during the private key process
 
-     - Returns: P256.KeyAgreement.PrivateKey instance of the private key.
+     - Returns: `P256.KeyAgreement.PrivateKey` instance of the private key.
      */
-    static func privateKey(rawRepresentation: Data) throws -> P256.KeyAgreement.PrivateKey {
+    public static func privateKey(rawRepresentation: Data) throws -> P256.KeyAgreement.PrivateKey {
         return try P256.KeyAgreement.PrivateKey(rawRepresentation: rawRepresentation)
     }
 
     /**
-     Returns a P256.KeyAgreement.PrivateKey instance of pem representation of the private key.
+     Returns a `P256.KeyAgreement.PrivateKey` instance of pem representation of the private key.
 
      - Parameter pemRepresentation: pem representation of the private key.
 
      - Throws: An error during the private key process
 
-     - Returns: P256.KeyAgreement.PrivateKey instance of the private key.
+     - Returns: `P256.KeyAgreement.PrivateKey` instance of the private key.
      */
-    static func privateKey(pemRepresentation: String) throws -> P256.KeyAgreement.PrivateKey {
+    public static func privateKey(pemRepresentation: String) throws -> P256.KeyAgreement.PrivateKey {
         return try P256.KeyAgreement.PrivateKey(pemRepresentation: pemRepresentation)
     }
 
     /**
-     Returns a P256.KeyAgreement.PrivateKey instance of der representation of the private key.
+     Returns a `P256.KeyAgreement.PrivateKey` instance of der representation of the private key.
 
      - Parameter derRepresentation: der representation of the private key.
 
      - Throws: An error during the private key process
 
-     - Returns: P256.KeyAgreement.PrivateKey instance of the private key.
+     - Returns: `P256.KeyAgreement.PrivateKey` instance of the private key.
      */
-    static func privateKey(derRepresentation: Data) throws -> P256.KeyAgreement.PrivateKey {
+    public static func privateKey(derRepresentation: Data) throws -> P256.KeyAgreement.PrivateKey {
         return try P256.KeyAgreement.PrivateKey(derRepresentation: derRepresentation)
     }
 
     /**
-     Returns a P256.KeyAgreement.PublicKey instance of an ANSI x9.63 representation of the public key.
+     Returns a `P256.KeyAgreement.PublicKey` instance of an ANSI x9.63 representation of the public key.
 
      - Parameter x963Representation: ANSI x9.63 representation of the public key.
 
      - Throws: An error during the public key process
 
-     - Returns: P256.KeyAgreement.PublicKey instance of the public key.
+     - Returns: `P256.KeyAgreement.PublicKey` instance of the public key.
      */
-    static func publicKey(x963Representation: Data) throws -> P256.KeyAgreement.PublicKey {
+    public static func publicKey(x963Representation: Data) throws -> P256.KeyAgreement.PublicKey {
         return try P256.KeyAgreement.PublicKey(x963Representation: x963Representation)
     }
 
     /**
-     Returns a P256.KeyAgreement.PublicKey instance of raw representation of the public key.
+     Returns a `P256.KeyAgreement.PublicKey` instance of raw representation of the public key.
 
      - Parameter rawRepresentation: raw representation of the public key.
 
      - Throws: An error during the public key process
 
-     - Returns: P256.KeyAgreement.PublicKey instance of the public key.
+     - Returns: `P256.KeyAgreement.PublicKey` instance of the public key.
      */
-    static func publicKey(rawRepresentation: Data) throws -> P256.KeyAgreement.PublicKey {
+    public static func publicKey(rawRepresentation: Data) throws -> P256.KeyAgreement.PublicKey {
         return try P256.KeyAgreement.PublicKey(rawRepresentation: rawRepresentation)
     }
 
     /**
-     Returns a P256.KeyAgreement.PublicKey instance of the public key of a pem representation
+     Returns a `P256.KeyAgreement.PublicKey` instance of the public key of a pem representation
 
      - Parameter pemRepresentation: pem representation of the public key.
 
      - Throws: An error during the public key process
 
-     - Returns: P256.KeyAgreement.PublicKey instance of the public key.
+     - Returns: `P256.KeyAgreement.PublicKey` instance of the public key.
      */
-    static func publicKey(pemRepresentation: String) throws -> P256.KeyAgreement.PublicKey {
+    public static func publicKey(pemRepresentation: String) throws -> P256.KeyAgreement.PublicKey {
         return try P256.KeyAgreement.PublicKey(pemRepresentation: pemRepresentation)
     }
 
     /**
-     Returns a P256.KeyAgreement.PublicKey instance of der representation of the public key.
+     Returns a `P256.KeyAgreement.PublicKey` instance of der representation of the public key.
 
      - Parameter derRepresentation: der representation of the public key.
 
      - Throws: An error during the public key process
 
-     - Returns: P256.KeyAgreement.PublicKey instance of the public key.
+     - Returns: `P256.KeyAgreement.PublicKey` instance of the public key.
      */
-    static func publicKey(derRepresentation: Data) throws -> P256.KeyAgreement.PublicKey {
+    public static func publicKey(derRepresentation: Data) throws -> P256.KeyAgreement.PublicKey {
         return try P256.KeyAgreement.PublicKey(derRepresentation: derRepresentation)
     }
 
     /**
      Initilializes KeyStore instance
 
-     - Parameter privateKey: P256.KeyAgreement.PrivateKey instance of the private key.
+     - Parameter privateKey: `P256.KeyAgreement.PrivateKey` instance of the private key.
 
      - Throws: An error during the private key initialization
      */
@@ -151,10 +151,10 @@ public struct KeyStore {
      Returns a symmetric key using private key
 
      - Parameters:
-        - publicKey: P256.KeyAgreement.PublicKey
+        - publicKey: `P256.KeyAgreement.PublicKey`instance of the public key of the other part
         - salt: The salt to use for key derivation.
 
-     - Throws: An error during shared secret creation
+     - Throws: An error during symmetric key creation
 
      - Returns: Symmetric key.
      */

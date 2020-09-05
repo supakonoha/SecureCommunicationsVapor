@@ -35,9 +35,9 @@ extension Data {
         - recipientPublicKey: Recipient public key.
         - salt: The salt to use for key derivation.
 
-     - Returns: combined AES Selead box  (nonce || ciphertext || tag). If there's a problem encrypting, nil is retuned.
+     - Returns: Combined AES Selead box  (nonce || ciphertext || tag). If there's a problem encrypting, `nil` is retuned.
      */
-    func sealAES(senderPrivateKey: P256.KeyAgreement.PrivateKey, recipientPublicKey: P256.KeyAgreement.PublicKey, salt: Data) -> Data? {
+    public func sealAES(senderPrivateKey: P256.KeyAgreement.PrivateKey, recipientPublicKey: P256.KeyAgreement.PublicKey, salt: Data) -> Data? {
         guard let keyStore = try? KeyStore(privateKey: senderPrivateKey) else {
             return nil
         }
@@ -59,9 +59,9 @@ extension Data {
          - senderPublicKey: Sender public key.
          - salt: The salt to use for key derivation.
 
-     - Returns: Decrypts the message and verifies its authenticity using AES.GCM. If there's a problem decrypting, nil is retuned.
+     - Returns: Decrypts the message and verifies its authenticity using AES.GCM. If there's a problem decrypting, `nil` is retuned.
      */
-    func openAES(recipientPrivateKey: P256.KeyAgreement.PrivateKey, senderPublicKey: P256.KeyAgreement.PublicKey, salt: Data) -> Data? {
+    public func openAES(recipientPrivateKey: P256.KeyAgreement.PrivateKey, senderPublicKey: P256.KeyAgreement.PublicKey, salt: Data) -> Data? {
         guard let keyStore = try? KeyStore(privateKey: recipientPrivateKey) else {
             return nil
         }
