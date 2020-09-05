@@ -60,7 +60,7 @@ extension Data {
          - senderPublicKey: Sender public key.
          - salt: The salt to use for key derivation.
 
-     - Returns:  Boolean indicating whether the given code is valid for current data. If there's a problem validating, `false` is retuned.
+     - Returns: Boolean indicating whether the given code is valid for current data. If there's a problem validating, `false` is retuned.
      */
     public func isValidAuthenticationCodeHMAC(recipientPrivateKey: P256.KeyAgreement.PrivateKey, authenticationCode: Data, senderPublicKey: P256.KeyAgreement.PublicKey, salt: Data) -> Bool {
         guard let keyStore = try? KeyStore(privateKey: recipientPrivateKey) else {

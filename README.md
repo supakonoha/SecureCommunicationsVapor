@@ -181,7 +181,7 @@ The Advanced Encryption Standard (AES) Galois Counter Mode (GCM) cipher suite.
 
 To encrypt a message the library has added some extensions to `String` and `Data` classes.
 
-If you want to encrypt some `Data` you will need to use `sealAES(senderPrivateKey: P256.KeyAgreement.PrivateKey, recipientPublicKey: P256.KeyAgreement.PublicKey, salt: Data)` function on the original message. It requieres you private key, the other part public key and the salt. You will receive the encrypted message that you can send to the other part with your public key and the salt.
+If you want to encrypt some `Data` you will need to use `sealAES(senderPrivateKey: P256.KeyAgreement.PrivateKey, recipientPublicKey: P256.KeyAgreement.PublicKey, salt: Data)` function on the original message. It requieres your private key, the other part public key and the salt. You will receive the encrypted message that you can send to the other part with your public key and the salt.
 
 ```swift
 let salt = "This is our salt".data(using: .utf8)!
@@ -193,7 +193,7 @@ let encryptedMessage = message.sealAES(
     salt: salt)
 ```
 
-If you want to encrypt some `String` you will need to use `sealAES(senderPrivateKey: P256.KeyAgreement.PrivateKey, recipientPublicKey: P256.KeyAgreement.PublicKey, salt: String)` function on the original message. It requieres you private key, the other part public key and the salt. You will receive the encrypted message that you can send to the other part with your public key and the salt.
+If you want to encrypt some `String` you will need to use `sealAES(senderPrivateKey: P256.KeyAgreement.PrivateKey, recipientPublicKey: P256.KeyAgreement.PublicKey, salt: String)` function on the original message. It requieres your private key, the other part public key and the salt. You will receive the encrypted message encoded on Base64 that you can send to the other part with your public key and the salt.
 
 ```swift
 let salt = "This is our salt"
@@ -209,7 +209,7 @@ let encryptedMessage = message.sealAES(
 
 To decrypt a message the library has added some extensions to `String` and `Data` classes.
 
-If you want to decrypt some `Data` you will need to use `openAES(recipientPrivateKey: P256.KeyAgreement.PrivateKey, senderPublicKey: P256.KeyAgreement.PublicKey, salt: Data)` function on the encrypted message. It requieres you private key, the other part public key and the salt. You will receive the original message.
+If you want to decrypt some `Data` you will need to use `openAES(recipientPrivateKey: P256.KeyAgreement.PrivateKey, senderPublicKey: P256.KeyAgreement.PublicKey, salt: Data)` function on the encrypted message. It requieres your private key, the other part public key and the salt. You will receive the original message.
 
 ```swift
 let salt = "This is our salt".data(using: .utf8)!
@@ -220,7 +220,7 @@ let message = encryptedMessage.openAES(
     salt: salt)
 ```
 
-If you want to decrypt some `String` you will need to use `openAES(recipientPrivateKey: P256.KeyAgreement.PrivateKey, senderPublicKey: P256.KeyAgreement.PublicKey, salt: String)` function on the encrypted message. It requieres you private key, the other part public key and the salt. You will receive the original message.
+If you want to decrypt some `String` you will need to use `openAES(recipientPrivateKey: P256.KeyAgreement.PrivateKey, senderPublicKey: P256.KeyAgreement.PublicKey, salt: String)` function on the encrypted message encoded on Base64. It requieres your private key, the other part public key and the salt. You will receive the original message.
 
 ```swift
 let salt = "This is our salt"
@@ -239,7 +239,7 @@ ChaCha20-Poly1305 cipher.
 
 To encrypt a message the library has added some extensions to `String` and `Data` classes.
 
-If you want to encrypt some `Data` you will need to use `sealChaChaPoly(senderPrivateKey: P256.KeyAgreement.PrivateKey, recipientPublicKey: P256.KeyAgreement.PublicKey, salt: Data)` function on the original message. It requieres you private key, the other part public key and the salt. You will receive the encrypted message that you can send to the other part with your public key and the salt.
+If you want to encrypt some `Data` you will need to use `sealChaChaPoly(senderPrivateKey: P256.KeyAgreement.PrivateKey, recipientPublicKey: P256.KeyAgreement.PublicKey, salt: Data)` function on the original message. It requieres your private key, the other part public key and the salt. You will receive the encrypted message that you can send to the other part with your public key and the salt.
 
 ```swift
 let salt = "This is our salt".data(using: .utf8)!
@@ -251,7 +251,7 @@ let encryptedMessage = message.sealChaChaPoly(
     salt: salt)
 ```
 
-If you want to encrypt some `String` you will need to use `sealChaChaPoly(senderPrivateKey: P256.KeyAgreement.PrivateKey, recipientPublicKey: P256.KeyAgreement.PublicKey, salt: String)` function on the original message. It requieres you private key, the other part public key and the salt. You will receive the encrypted message that you can send to the other part with your public key and the salt.
+If you want to encrypt some `String` you will need to use `sealChaChaPoly(senderPrivateKey: P256.KeyAgreement.PrivateKey, recipientPublicKey: P256.KeyAgreement.PublicKey, salt: String)` function on the original message. It requieres your private key, the other part public key and the salt. You will receive the encrypted message encoded on Base64 that you can send to the other part with your public key and the salt.
 
 ```swift
 let salt = "This is our salt"
@@ -267,7 +267,7 @@ let encryptedMessage = message.sealChaChaPoly(
 
 To decrypt a message the library has added some extensions to `String` and `Data` classes.
 
-If you want to decrypt some `Data` you will need to use `openChaChaPoly(recipientPrivateKey: P256.KeyAgreement.PrivateKey, senderPublicKey: P256.KeyAgreement.PublicKey, salt: Data)` function on the encrypted message. It requieres you private key, the other part public key and the salt. You will receive the original message.
+If you want to decrypt some `Data` you will need to use `openChaChaPoly(recipientPrivateKey: P256.KeyAgreement.PrivateKey, senderPublicKey: P256.KeyAgreement.PublicKey, salt: Data)` function on the encrypted message. It requieres your private key, the other part public key and the salt. You will receive the original message.
 
 ```swift
 let salt = "This is our salt".data(using: .utf8)!
@@ -278,7 +278,7 @@ let message = encryptedMessage.openChaChaPoly(
     salt: salt)
 ```
 
-If you want to decrypt some `String` you will need to use `openChaChaPoly(recipientPrivateKey: P256.KeyAgreement.PrivateKey, senderPublicKey: P256.KeyAgreement.PublicKey, salt: String)` function on the encrypted message. It requieres you private key, the other part public key and the salt. You will receive the original message.
+If you want to decrypt some `String` you will need to use `openChaChaPoly(recipientPrivateKey: P256.KeyAgreement.PrivateKey, senderPublicKey: P256.KeyAgreement.PublicKey, salt: String)` function on the encrypted message encoded on Base64. It requieres your private key, the other part public key and the salt. You will receive the original message.
 
 ```swift
 let salt = "This is our salt"
@@ -312,7 +312,7 @@ A hash-based message authentication algorithm.
 
 To compute a message authentication code the library has added some extensions to `String` and `Data` classes.
 
-If you want to compute some `Data` you will need to use `authenticationCodeHMAC(senderPrivateKey: P256.KeyAgreement.PrivateKey, recipientPublicKey: P256.KeyAgreement.PublicKey, salt: Data)` function on the message.  It requieres you private key, the other part public key and the salt. You will receive the message authentication code.
+If you want to compute some `Data` you will need to use `authenticationCodeHMAC(senderPrivateKey: P256.KeyAgreement.PrivateKey, recipientPublicKey: P256.KeyAgreement.PublicKey, salt: Data)` function on the message.  It requieres your private key, the other part public key and the salt. You will receive the message authentication code that you can send to the other part with the original message, your public key and the salt.
 
 ```swift
 let salt = "This is our salt".data(using: .utf8)!
@@ -324,7 +324,7 @@ let messageAuthenticationCode = message.authenticationCodeHMAC(
     salt: salt)
 ```
 
-If you want to compute some `String` you will need to use `authenticationCodeHMAC(senderPrivateKey: P256.KeyAgreement.PrivateKey, recipientPublicKey: P256.KeyAgreement.PublicKey, salt: Data)` function on the message.  It requieres you private key, the other part public key and the salt. You will receive the message authentication code.
+If you want to compute some `String` you will need to use `authenticationCodeHMAC(senderPrivateKey: P256.KeyAgreement.PrivateKey, recipientPublicKey: P256.KeyAgreement.PublicKey, salt: Data)` function on the message.  It requieres your private key, the other part public key and the salt. You will receive the message authentication code encoded on Base64 that you can send to the other part with the original message, your public key and the salt.
 
 ```swift
 let salt = "This is our salt"
@@ -340,7 +340,7 @@ let messageAuthenticationCode = message.authenticationCodeHMAC(
 
 To validate a message authentication code the library has added some extensions to `String` and `Data` classes.
 
-If you want to validate some `Data` you will need to use `isValidAuthenticationCodeHMAC(recipientPrivateKey: P256.KeyAgreement.PrivateKey, authenticationCode: Data, senderPublicKey: P256.KeyAgreement.PublicKey, salt: Data)` function on the original message.  It requieres you private key, the message authentication code, the other part public key and the salt. You will receive `true` if the original message has not been modified.
+If you want to validate some `Data` you will need to use `isValidAuthenticationCodeHMAC(recipientPrivateKey: P256.KeyAgreement.PrivateKey, authenticationCode: Data, senderPublicKey: P256.KeyAgreement.PublicKey, salt: Data)` function on the original message.  It requieres your private key, the message authentication code, the other part public key and the salt. You will receive `true` if the original message has not been modified.
 
 ```swift
 let salt = "This is our salt".data(using: .utf8)!
@@ -353,7 +353,7 @@ let isValid = message.isValidAuthenticationCodeHMAC(
     salt: salt)
 ```
 
-If you want to validate some `String` you will need to use `isValidAuthenticationCodeHMAC(recipientPrivateKey: P256.KeyAgreement.PrivateKey, authenticationCode: String, senderPublicKey: P256.KeyAgreement.PublicKey, salt: String)` function on the original message.  It requieres you private key, the message authentication code, the other part public key and the salt. You will receive `true` if the original message has not been modified.
+If you want to validate some `String` you will need to use `isValidAuthenticationCodeHMAC(recipientPrivateKey: P256.KeyAgreement.PrivateKey, authenticationCode: String, senderPublicKey: P256.KeyAgreement.PublicKey, salt: String)` function on the original message.  It requieres your private key, the message authentication code encoded on Base64, the other part public key and the salt. You will receive `true` if the original message has not been modified.
 
 ```swift
 let salt = "This is our salt"
