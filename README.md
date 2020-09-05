@@ -32,7 +32,7 @@ This library can be used on [Vapor](https://vapor.codes) on the server side.
 
 #### Add dependencies
 
-Add the `SecureCommunicationsVapor` paclage to the dependencies within your appliction's `Package.swift` file:
+Add the `SecureCommunicationsVapor` package to the dependencies within your appliction's `Package.swift` file:
 
 ```swift
 .package(url: "https://github.com/supakonoha/SecureCommunicationsVapor", from: "1.0.0")
