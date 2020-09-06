@@ -76,6 +76,6 @@ extension Data {
             return nil
         }
 
-        return try? ChaChaPoly.open(ChaChaPolySealedBox, using: symmetricKey)
+        return try? ChaChaPoly.open(chaChaPolySealedBox, using: symmetricKey)
     }
 }
