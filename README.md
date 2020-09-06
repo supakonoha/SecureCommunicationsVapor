@@ -370,6 +370,10 @@ let isValid = message.isValidAuthenticationCodeHMAC(
 
 You can check API Reference on [documentation site](https://supakonoha.github.io/SecureCommunicationsVapor/)
 
+# How to
+
+If you need an example about how to integrate the library on a Vapor project, please, go to [How to](https://github.com/supakonoha/SecureCommunicationsVapor/wiki/How-to) section on the Wiki.
+
 [badge-languages]: https://img.shields.io/badge/languages-Swift-orange.svg
 [badge-pms]: https://img.shields.io/badge/supports-SwiftPM-green.svg
 [badge-swift]: http://img.shields.io/badge/swift-5.3-brightgreen.svg
